@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Công cụ ghi âm</title>
+    <link rel="short icon" type="image/x-icon" href="img/toefl.png" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/flipclock.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Audio Player -->
+        <div class="col-md-7">
+            <!-- Audio -->
+            <div id="audio-player-wrapper">
+                <audio id="audio-player" controls ></audio>
+                <div id="diy-player">
+                    <div id="play-btn-wrapper">
+                        <div id="play-btn" class="play">
+                            <div id="play-btn-triangle"></div>
+                            <div id="play-btn-pause">
+                                <div class="part-1"></div>
+                                <div class="part-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="player-center-wrapper">
+                        <div id="player-center">
+                            <div class="row" id="audio-name-volume">
+                                <div id="audio-name-wrapper">
+                                    <div id="audio-name" title="Local Audio Player">Nghe ghi âm</div>
+                                </div>
+                               <!-- <div id="play-speed-wrapper">
+                                    <div id="play-speed">Tốc độ: 1.0</div>
+                                </div>-->
+                                <div id="loop-mode-wrapper">
+                                    <div id="loop-single">1</div>
+                                </div>
+                                <div id="audio-volume-wrapper">
+                                    <div id="icon-volume-low">
+                                        <div class="part-1"></div>
+                                        <div class="part-2"></div>
+                                    </div>
+                                    <div><input type="range" id="audio-volume" value="80" max="100"/></div>
+                                    <div id="icon-volume-high">
+                                        <div class="part-1"></div>
+                                        <div class="part-2"></div>
+                                        <div class="part-3"></div>
+                                        <div class="part-4"></div>
+                                        <div class="part-5"></div>
+                                        <div class="part-6"></div>
+                                        <div class="part-7"></div>
+                                        <div class="part-8"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="audio-timeline">
+                                <div id="audio-time-current">00:00</div>
+                                <div id="audio-process-wrapper">
+                                    <input type="range" id="audio-process" value="0" max="100" />
+                                </div>
+                                <div id="audio-time-total">-00:00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="switch-btn-wrapper">
+                        <div id="prev-btn">
+                            <div id="prev-btn-triangle"></div>
+                        </div>
+                        <div id="next-btn">
+                            <div id="next-btn-triangle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display audio list -->
+            <div id="audio-list-wrapper">
+                <div id="audio-list">
+                    {{#lst}}
+                    <a href="###" data-aid="{{id}}" style="
+                    background-color: rgb({{bg}});
+                    color: rgb({{clr}});
+                ">{{name}}</a>
+                    {{/lst}}
+                </div>
+            </div>
+
+            <!-- Listen to Audio Dragover -->
+            <div id="drop-place">
+                Kéo tệp mp3<br/> thả vào đây
+            </div>
+
+            <div class="hide-divide"></div>
+            <!-- Help Doc -->
+            <div id="pop-win-wrapper">
+                <table class="mask">
+                    <tr>
+                        <td>
+                            <div class="pop-win">
+                                <div class="close-btn">X</div>
+                                <div class="win-content">
+                                    <table class="shortcuts">
+                                        <tr>
+                                            <th>Phím tắt	</th>
+                                            <th>Chức năng</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Phím trắng (Spaces), P</td>
+                                            <td>Chơi tiếp, dừng lại</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A, S</td>
+                                            <td>Bắt đầu và dừng ghi âm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1, 2</td>
+                                            <td>Ghi âm 45 hoặc 60 giây	</td>
+                                        </tr>
+                                        <tr>
+                                            <td>L</td>
+                                            <td>Lặp lại 1 lần</td>
+                                        </tr>
+                                        <tr>
+                                            <td>↑, ↓</td>
+                                            <td>Trước đó, tiếp theo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lt;, &gt;</td>
+                                            <td>Lùi và tiến 5 giây</td>
+                                        </tr>
+                                        <tr>
+                                            <td>[,]</td>
+                                            <td>Lùi và tiến 30 giây</td>
+                                        </tr>
+                                        <tr>
+                                            <td>←, →</td>
+                                            <td>Tăng giảm âm lượng,  tăng 5%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Z, X</td>
+                                            <td>Gấp đôi tốc độ phát, tăng 0.1 tốc độ phát</td>
+                                        </tr>
+                                        <tr>
+                                            <td>M</td>
+                                            <td>Tắt âm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>R</td>
+                                            <td>Sắp xếp thứ tự âm thanh theo tên</td>
+                                        </tr>
+                                        <tr>
+                                            <td>?</td>
+                                            <td>Mở bảng hướng dẫn</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+        <!-- Recorder -->
+        <div class="col-md-5">
+            <!-- FlipClock -->
+            <div class="clock-wrapper">
+                <div class="clock"></div>
+            </div>
+            <!-- Record tools -->
+            <div class="text-center">
+                <div class="panel panel-default" style="margin: 10px 20px;">
+                    <div class="panel-heading action-list">
+                        <p>
+                            <button type="button" class="btn btn-success start" onclick="startRecording();">
+                                <i class="icon-record"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger stop" onclick="stopRecording();" disabled>
+                                <i class="icon-stop2"></i>
+                            </button>
+                            <button type="button" class="btn btn-warning reset" onclick="resetRecording();">
+                                <i class="icon-bin"></i>
+                            </button>
+                        </p>
+                        <p style="margin-top: 10px">
+                            <button type="button" class="btn btn-info" onclick="recordSecond(45);">Ghi âm 45s</button>
+                            <button type="button" class="btn btn-info" onclick="recordSecond(60);">Ghi âm 60s</button>
+			    <button type="button" class="btn btn-info" onclick="window.open('https://findsynonym.herokuapp.com/')">Soạn bài nói</button>
+ 
+	               </p>
+
+                    </div>
+
+                </div>
+                    <div class="panel-body">
+                        <ul id="recordingsList"></ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="navbar-fixed-bottom copyright">
+        TOEFL Helper
+    </footer>
+</div> 
+               
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/mustache.js"></script>
+<script type="text/javascript" src="js/recorder.js"></script>
+<script type="text/javascript" src="js/flipclock.min.js"></script>
+<script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript" src="js/record.js"></script>

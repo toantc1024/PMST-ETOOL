@@ -1,0 +1,2 @@
+Chạy Offline: Mở ETool.html (Chọn Open With nếu muốn chạy với trình duyệt tùy ý - Trình duyệt Google Chrome mang lại hiệu suất ổn định)
+Chạy Online: https://freeenglishtool.web.app/
