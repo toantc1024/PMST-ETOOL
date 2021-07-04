@@ -4,3 +4,4 @@ Mã nguồn EVTD: <a href="https://github.com/ghelix2004/EVTD-Page" target="_bla
 Mã nguồn Trò Chơi: <a href="https://github.com/ghelix2004/Game-With-English" target="_blank">Trò Chơi Tiếng Anh</a> <br> 
 Mã nguồn Nhật Ký Từ Vựng: <a href="https://github.com/ghelix2004/nhatkytuvung" target="_blank">NhatKyTuVung</a> <br>
 Mã nguồn FindSynonym: <a href="https://github.com/ghelix2004/findsynonym" target="_blank">FindSynonym</a>
+Code -> Download Zip để tải về mã nguồn
