@@ -5,3 +5,4 @@ Mã nguồn Trò Chơi: <a href="https://github.com/ghelix2004/Game-With-English
 Mã nguồn Nhật Ký Từ Vựng: <a href="https://github.com/ghelix2004/nhatkytuvung" target="_blank">NhatKyTuVung</a> <br>
 Mã nguồn FindSynonym: <a href="https://github.com/ghelix2004/findsynonym" target="_blank">FindSynonym</a>
 Code -> Download Zip để tải về mã nguồn
+![Demo](https://raw.githubusercontent.com/ghelix2004/PMST-ETOOL/master/img/Demo.png)
