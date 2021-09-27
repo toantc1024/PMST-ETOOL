@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="GWE">ETOOL English Games</title>
+<meta
+  name="description"           
+  content="ETOOL - For A Better Future">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg" href="edit-svgrepo-com.svg"/>
+<link rel="stylesheet" href="game-style.css">
+<link rel="stylesheet" href="game-starshoot.css">
+<link rel="stylesheet" href="game-paralax.css">
+	<div class="wrapper">
+	<div class="btn-groups">  
+		<div class="btn-blue-tr" onclick="window.location.href='TimTu.html'" id="st1">Search Word</div>
+		<div class="btn-blue-tr" onclick="location.href='https://wordtetris.herokuapp.com/'" id="st2">Word Tetris</div>
+		<div class="btn-blue-tr" onclick="window.location.href='DNB.html'" id="st3">Dual-N Back</div>
+		<div class="btn-blue-tr" onclick="window.location.href='WordMK.html'" id="st4">Word Maker</div>
+		<div class="btn-blue-tr" onclick="window.location.href='WPZ.html'" id="st5">Word Puzzle</div>
+		<div class="btn-blue-tr" onclick="window.location.href='COW.html'" id="st6">Word or Color</div>  
+		<div class="btn-blue-tr" onclick="window.location.href='ANM.html'" id="st7">Guess Tape</div> 
+	        <div class="btn-red-tr" id="download-star" onclick="window.open('https://github.com/ghelix2004/Game-With-English' + location.search)">Download</div>
+
+	</div>   
+	</div>
+		<div class="night">
+<!--		<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>-->
+	  	<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>
+  		<div class="shooting_star"></div>
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+</head>
+<body>
+<script>
+   function StarUpdate(){
+	   var starlang = localStorage.getItem("lang-e");
+	   if (starlang == "vn"){
+			document.getElementById("st1").innerText = "Tìm Từ";
+			document.getElementById("GWE").innerText = "ETOOL Trò Chơi Tiếng Anh"
+			document.getElementById("st2").innerText = "Word Tetris";
+			document.getElementById("st3").innerText = "Dual N-Back";
+			document.getElementById("st4").innerText = "Word Maker";
+			document.getElementById("st5").innerText = "Word Puzzle";
+			document.getElementById("st6").innerText = "Word or Color";
+			document.getElementById("st7").innerText = "Guess Tape";
+			document.getElementById("download-star").innerText = "Tải xuống";
+	   }
+   }
+   window.onload = StarUpdate();
+</script>
+</body>
+</html>

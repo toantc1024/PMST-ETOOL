@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head> 
+<meta
+  name="description"           
+  content="ETOOL - For A Better Future">
+  <link rel="icon" type="image/svg" href="farm-svgrepo-com.svg"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="GrassGround">ETOOL Nhật Ký</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./diary-grass.css">
+  <link rel="stylesheet" href="./diary-grassbutton.css">
+</head>
+
+<body>
+<style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 750px;
+}
+</style>
+<!-- partial:index.partial.html -->
+
+	<div id="wrapper">
+  		<div id="clouds">
+<div class="center">
+				<div class="btn-groups">  
+					<div class="btn-red-tr" onclick="window.location.href='NhatKy.html'" id="v1-d">Phiên bản chính thức</div>
+					<div class="btn-green-tr" onclick="window.location.href='NhatKy(Beta).html'" id="v2-d">Phiên bản thử nghiệm</div>
+					<div class="btn-blue-tr" onclick="window.open('https://github.com/ghelix2004/nhatkytuvung' + location.search)" id="v3-d">Tải xuống</div>
+					<!--<embed src="https://github.com/ghelix2004/nhatkytuvung" loop="true" autostart="true">-->
+				</div>
+</div>
+		</div>
+  		<div id="ground"></div>
+	</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script><script  src="./diary-script.js"></script>
+</body>
+<script>
+	function UpdateDiary(){
+		if (localStorage.getItem("lang-e")=="vn") {
+			document.querySelector('#v1-d').innerText = "Phiên bản chính thức";
+    		document.querySelector('#v2-d').innerText = "Phiên bản thử nghiệm";	
+			document.querySelector('#v3-d').innerText = "Tải xuống";
+		} else {
+			if (localStorage.getItem("lang-e")=="en") {
+				document.querySelector('#v1-d').innerText = "Official Version";
+    			document.querySelector('#v2-d').innerText = "Beta Version";	
+				document.querySelector('#v3-d').innerText = "Download";
+				document.getElementById("GrassGround").innerText = "ETOOL Diary";
+			}
+		}
+	}
+	window.onload = UpdateDiary();
+</script>
+<!--<script  src="etool.js"></script>-->
+</html>

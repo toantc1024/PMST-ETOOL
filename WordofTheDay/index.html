@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Word Of The Day</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="duma.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <link rel="shortcut icon" href="the-sun.ico" type="image/x-icon" />
+  <script src="https://use.fontawesome.com/58bcbed17c.js"></script>
+  <style>
+    .button {
+    background-color: #4287f5;
+    border: none;
+    color: white;
+    padding: 3px 6px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+    .button:hover {opacity: 0.8}
+    .button {background-color: #3056d1;}
+  </style>
+</head>
+
+<body>
+    <div id="date" class="font shadedbg">
+        <!--<i class="fa fa-heart-o"></i>-->
+    </div>
+    <!--<p id="favorites" class="shadedbg">favorites</p>
+    <div id="fave-panel"></div>-->
+    <div id="all" class="font centered shadedbg">
+        <a id="link" href="#" target="_blank"><div id="word"></div></a>
+        <div id="pronun"></div>
+        <button id="hear1" class="button button" style="background-color: #008cff;">Nghe từ | Hear the word</button>
+        <div id="defin"></div>
+        <button id="hear2" class="button button" style="background-color: #ff9900;">Nghe định nghĩa | Hear definition</button>
+        <div><b>Ví dụ trong câu</b></div>
+        <a id="getlink" target="_blank"><u><div id="title"></div></u></a>
+        <div id="text"></div>
+        <button id="hear3" class="button button" style="background-color: #db4141;">Nghe ví dụ | Hear the example</button>
+        <div><b>Note:</b></div>
+        <div id="note"></div>
+        <button id="hear4" class="button button" style="background-color: #32a856;">Hear note</button>
+        <br>
+    </div>
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=Bwsk0IO1"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="duma.js"></script>
+</body>
+
+</html>

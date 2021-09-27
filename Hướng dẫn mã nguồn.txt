@@ -1,0 +1,18 @@
+﻿1. Đối với Word Tetris và FindSynonym, do được triển khai miễn phí tại Heroku nên cần thời gian tải trang.
+2. Video hướng dẫn trên OneDrive: https://1drv.ms/v/s!ApqdyQGYxggle2IAVyIutE8XgdA
+/ : đường dẫn
+// : chú thích
+CẤU TRÚC THƯ MỤC CỦA MÃ NGUỒN
+Mã nguồn - ETOOL/
+├─ Mã nguồn phần mở rộng/
+│  ├─ FS - FindSynonym/
+│  │  ├─ Mã nguồn - Công cụ viết Essay //Phần mở rộng
+│  │  │  ├─ front-end/
+│  │  │  │  ├─ Chay lan dau.cmd // Cài đặt NodeJS
+│  │  │  │  ├─ FindSynonym.cmd //Chạy mã nguồn phần mở rộng FindSynonym
+│  │  ├─ SuDungTrenDienThoai.mp4
+│  │  ├─ SuDungTrenMayTinh.mp4
+│  ├─ TuDienChoTrinhDuyet //Phần mở rộng
+│  │  ├─ CaiDatVaSuDung.mp4
+│  │  ├─ Product EVT //Mã website sản phẩm EVTD
+├─ index.html //Chạy mã nguồn trang web Công Cụ Tiếng Anh

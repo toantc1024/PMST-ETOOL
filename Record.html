@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title id="RecordTitle">ETOOL Ghi Âm</title>
+<meta
+  name="description"           
+  content="ETOOL - For A Better Future">
+    <link rel="short icon" type="image/x-icon" href="img/toefl.png" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/flipclock.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Audio Player -->
+        <div class="col-md-7">
+            <!-- Audio -->
+            <div id="audio-player-wrapper">
+                <audio id="audio-player" controls ></audio>
+                <div id="diy-player">
+                    <div id="play-btn-wrapper">
+                        <div id="play-btn" class="play">
+                            <div id="play-btn-triangle"></div>
+                            <div id="play-btn-pause">
+                                <div class="part-1"></div>
+                                <div class="part-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="player-center-wrapper">
+                        <div id="player-center">
+                            <div class="row" id="audio-name-volume">
+                                <div id="audio-name-wrapper">
+                                    <div id="audio-name" title="Local Audio Player">Nghe bản ghi âm</div>
+                                </div>
+                               <!-- <div id="play-speed-wrapper">
+                                    <div id="play-speed">Tốc độ: 1.0</div>
+                                </div>-->
+                                <div id="loop-mode-wrapper">
+                                    <div id="loop-single">1</div>
+                                </div>
+                                <div id="audio-volume-wrapper">
+                                    <div id="icon-volume-low">
+                                        <div class="part-1"></div>
+                                        <div class="part-2"></div>
+                                    </div>
+                                    <div><input type="range" id="audio-volume" value="80" max="100"/></div>
+                                    <div id="icon-volume-high">
+                                        <div class="part-1"></div>
+                                        <div class="part-2"></div>
+                                        <div class="part-3"></div>
+                                        <div class="part-4"></div>
+                                        <div class="part-5"></div>
+                                        <div class="part-6"></div>
+                                        <div class="part-7"></div>
+                                        <div class="part-8"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="audio-timeline">
+                                <div id="audio-time-current">00:00</div>
+                                <div id="audio-process-wrapper">
+                                    <input type="range" id="audio-process" value="0" max="100" />
+                                </div>
+                                <div id="audio-time-total">-00:00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="switch-btn-wrapper">
+                        <div id="prev-btn">
+                            <div id="prev-btn-triangle"></div>
+                        </div>
+                        <div id="next-btn">
+                            <div id="next-btn-triangle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display audio list -->
+            <div id="audio-list-wrapper">
+                <div id="audio-list">
+                    {{#lst}}
+                    <a href="###" data-aid="{{id}}" style="
+                    background-color: rgb({{bg}});
+                    color: rgb({{clr}});
+                ">{{name}}</a>
+                    {{/lst}}
+                </div>
+            </div>
+
+            <!-- Listen to Audio Dragover -->
+            <div id="drop-place">
+                Kéo tệp mp3<br/> thả vào đây
+            </div>
+
+            <div class="hide-divide"></div>
+            <!-- Help Doc -->
+            <div id="pop-win-wrapper">
+                <table class="mask">
+                    <tr>
+                        <td>
+                            <div class="pop-win">
+                                <div class="close-btn">X</div>
+                                <div class="win-content">
+                                    <table class="shortcuts">
+                                        <tr>
+                                            <th id="r1">Phím tắt	</th>
+                                            <th id="r2">Chức năng</th>
+                                        </tr>
+                                        <tr>
+                                            <td id="space">Phím trắng (Spaces), P</td>
+                                            <td id="r3">Chơi tiếp, dừng lại</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A, S</td>
+                                            <td id="r4">Bắt đầu và dừng ghi âm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1, 2</td>
+                                            <td id="r5">Ghi âm 45 hoặc 60 giây	</td>
+                                        </tr>
+                                        <tr>
+                                            <td>L</td>
+                                            <td id="r6">Lặp lại 1 lần</td>
+                                        </tr>
+                                        <tr>
+                                            <td>↑, ↓</td>
+                                            <td id="r7">Trước đó, tiếp theo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lt;, &gt;</td>
+                                            <td id="r8">Lùi hoặc tiến 5 giây</td>
+                                        </tr>
+                                        <tr>
+                                            <td>[,]</td>
+                                            <td id="r9">Lùi và tiến 30 giây</td>
+                                        </tr>
+                                        <tr>
+                                            <td>←, →</td>
+                                            <td id="r10">Tăng giảm âm lượng,  tăng 5%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Z, X</td>
+                                            <td id="r11">Gấp đôi tốc độ phát, tăng 0.1 tốc độ phát</td>
+                                        </tr>
+                                        <tr>
+                                            <td>M</td>
+                                            <td id="r12">Tắt âm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>R</td>
+                                            <td id="reset">Khởi động lại</td>
+                                        </tr>
+                                        <tr>
+                                            <td>? [/]</td>
+                                            <td id="open">Mở bảng hướng dẫn</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+        <!-- Recorder -->
+        <div class="col-md-5">
+            <!-- FlipClock -->
+            <div class="clock-wrapper">
+                <div class="clock" >
+                </div>
+            </div>
+            <!-- Record tools -->
+            <div class="text-center">
+                <div class="panel panel-default" style="margin: 10px 20px;">
+                    <div class="panel-heading action-list">
+                        <p>
+                            <button type="button" class="btn btn-success start" onclick="startRecording();">
+                                <i class="icon-record"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger stop" onclick="stopRecording();" disabled>
+                                <i class="icon-stop2"></i>
+                            </button>
+                            <button type="button" class="btn btn-warning reset" onclick="resetRecording();">
+                                <i class="icon-bin"></i>
+                            </button>
+                        </p>
+                        <p style="margin-top: 10px">
+                            <button type="button" class="btn btn-info" onclick="recordSecond(45);" id="t1"> Ghi âm 45s</button>
+                            <button type="button" class="btn btn-info" onclick="recordSecond(60);" id="t2"> Ghi âm 60s</button>
+			    <button id="prepare" type="button" class="btn btn-info" onclick="window.open('https://findsynonym.herokuapp.com/')"q></i>Soạn bài nói</button>
+ 
+	               </p>
+
+                    </div>
+                </div>
+                    <div class="panel-body">
+                        <ul id="recordingsList"></ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer style="font-size:9.75px" class="navbar-fixed-bottom copyright">
+        <a href="https://github.com/ghelix2004/PMST-ETOOL" target="_blank"><i class="fab fa-github"></i> FreeEnglishTool <script type="text/javascript">document.write(new Date().getFullYear());</script></a>
+    </footer>
+</div> 
+         <p style="text-align: center;" id="introduction">Bấm phím "/" để mở bảng phím tắt</p>    			
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/mustache.js"></script>
+<script type="text/javascript" src="js/recorder.js"></script>
+<script type="text/javascript" src="js/flipclock.min.js"></script>
+<script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript" src="js/record.js"></script>
+<script src="https://kit.fontawesome.com/3a8687945d.js" crossorigin="anonymous"></script>
+<script>
+    function UpdateRecord(){
+        var rlang = localStorage.getItem("lang-e");
+            if (rlang == "en") {
+                document.getElementById("audio-name").innerText = "Hear voice record";
+                document.getElementById("drop-place").innerText = "Drop voice record and Drag it here";
+                document.getElementById("introduction").innerText = "Press key "+"/"+" to open the shortcuts";
+                document.getElementById("t1").innerText = "Record 45s";
+                document.getElementById("t2").innerText = "Record 60s";
+                document.getElementById("prepare").innerText = "Essay editor";
+                document.getElementById("r1").innerText = "Shortcuts";
+                document.getElementById("r2").innerText = "Task";
+                document.getElementById("open").innerText = "Open the shortcuts";
+                document.getElementById("reset").innerText = "Reset recorder";
+                document.getElementById("r3").innerText = "Continue, Pause Record";
+                document.getElementById("r4").innerText = "Start, Stop Record";
+                document.getElementById("r5").innerText = "Record 45s, 60s";
+                document.getElementById("r6").innerText = "Repeat one time";
+                document.getElementById("r7").innerText = "Previous, Next";
+                document.getElementById("r8").innerText = "Backward, Forward 5 seconds";
+                document.getElementById("r9").innerText = "Backward, Forward 30 seconds";
+                document.getElementById("r10").innerText = "Reduce, Increase Volume by 5%";
+                document.getElementById("r11").innerText = "Double Speed, Increase Speed by 0.1%";
+                document.getElementById("r12").innerText = "Mute";
+                document.getElementById("space").innerText = "Spaces, P";
+                document.getElementById("RecordTitle").innerText = "ETOOL Record"
+            }
+        }
+    window.onload = UpdateRecord();    
+</script>
